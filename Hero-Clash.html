@@ -219,10 +219,20 @@ function update() {
   }
 
   if (playerHP <= 0) {
-    alert("Game Over 💀");
-    localStorage.clear();
-    location.reload();
-  }
+  alert("Game Over 💀");
+  
+  // reset values manually
+  wave = 1;
+  xp = 0;
+  level = 1;
+  playerHP = 100;
+  enemyHP = 100;
+  
+  localStorage.clear();
+  
+  update();
+  draw();
+}
 }
 
 // START
